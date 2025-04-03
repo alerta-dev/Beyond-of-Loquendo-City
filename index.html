@@ -15,7 +15,8 @@
       font-family: 'Poppins', sans-serif;
       background: url('https://64.media.tumblr.com/90f6cdcbc51c53fa4ca7294da96fc3f8/tumblr_pios19KpQC1ufq8wko1_540.gifv') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+      color: white;
+      padding: 20px;
     }
     
     .navbar {
@@ -30,6 +31,51 @@
       text-decoration: none;
       font-weight: bold;
     }
+    
+            .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+        }
+
+        .category {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    
     .image-port1 { 
     width: 536.8px;
     height: 400px;
@@ -143,8 +189,30 @@
 
   <!-- INICIO: Información del torneo --> <!--CONTEINER class="container-->
   <section id="inicio">
-  <img src="https://64.media.tumblr.com/91dad312b83f2b01481a28c25e8e32c5/41f279afada44e32-8c/s2048x3072/c6c124fe38338eed51ea8a8acab6bb3e94cd49e2.pnj" alt="imagen portada 1" class="image-port1" >
-  
-  </section>
+  <div class="grid-container">
+    <div class="grid-item">
+        <img src="image1.jpg" alt="Noticia 1">
+        <div class="overlay">
+            <div class="category">News Release</div>
+            <div class="title">NASA Sets Coverage for Crew Launch</div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="image2.jpg" alt="Noticia 2">
+        <div class="overlay">
+            <div class="category">Article</div>
+            <div class="title">NASA Receives 10 Nominations for Webby Awards</div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="image3.jpg" alt="Noticia 3">
+        <div class="overlay">
+            <div class="category">Article</div>
+            <div class="title">NASA Webb Explores Magnetic Fields in Space</div>
+        </div>
+    </div>
+</div>
+
+</section>
 </body>
 </html>
