@@ -38,7 +38,7 @@
                 "noticia4 noticia5 noticia5";
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto;
-            grid-gap: 10px;
+            grid-gap: 5px;
         }
 
         .grid-item {
@@ -190,6 +190,11 @@
     grid-row: span 2; /* Ocupa dos filas */
     min-height: 400px;
     
+}
+.noticia2 img {
+    height: 100%;  /* Hace que la imagen ocupe todo el espacio disponible */
+    width: 100%;   /* Ajusta el ancho automáticamente */
+    object-fit: cover; /* Recorta la imagen para encajar bien */
 }
     
   </style>
