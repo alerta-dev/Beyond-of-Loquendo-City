@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: url('https://64.media.tumblr.com/90f6cdcbc51c53fa4ca7294da96fc3f8/tumblr_pios19KpQC1ufq8wko1_540.gifv') no-repeat center center fixed;
+      background-color: #111;
       background-size: cover;
       color: white;
       padding: 20px;
@@ -31,10 +31,14 @@
       text-decoration: none;
       font-weight: bold;
     }
-    
-            .grid-container {
+      .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "noticia1 noticia1 noticia2"
+                "noticia1 noticia1 noticia3"
+                "noticia4 noticia5 noticia5";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
             grid-gap: 10px;
         }
 
@@ -46,7 +50,8 @@
 
         .grid-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.3s ease;
         }
@@ -75,7 +80,15 @@
             font-weight: bold;
             margin-top: 5px;
         }
-    
+
+        /* Asignación de áreas */
+        .noticia1 { grid-area: noticia1; }
+        .noticia2 { grid-area: noticia2; }
+        .noticia3 { grid-area: noticia3; }
+        .noticia4 { grid-area: noticia4; }
+        .noticia5 { grid-area: noticia5; }
+      
+      
     .image-port1 { 
     width: 536.8px;
     height: 400px;
@@ -189,26 +202,40 @@
 
   <!-- INICIO: Información del torneo --> <!--CONTEINER class="container-->
   <section id="inicio">
-  <div class="grid-container">
-    <div class="grid-item">
+<div class="grid-container">
+    <div class="grid-item noticia1">
         <img src="Dazai PORTADA.png" alt="Noticia 1">
         <div class="overlay">
             <div class="category">News Release</div>
             <div class="title">NASA Sets Coverage for Crew Launch</div>
         </div>
     </div>
-    <div class="grid-item">
+    <div class="grid-item noticia2">
         <img src="Dazai PORTADA.png" alt="Noticia 2">
         <div class="overlay">
             <div class="category">Article</div>
             <div class="title">NASA Receives 10 Nominations for Webby Awards</div>
         </div>
     </div>
-    <div class="grid-item">
+    <div class="grid-item noticia3">
         <img src="Dazai PORTADA.png" alt="Noticia 3">
         <div class="overlay">
             <div class="category">Article</div>
-            <div class="title">NASA Webb Explores Magnetic Fields in Space</div>
+            <div class="title">NASA Webb Explores Magnetic Fields</div>
+        </div>
+    </div>
+    <div class="grid-item noticia4">
+        <img src="Dazai PORTADA.png" alt="Noticia 4">
+        <div class="overlay">
+            <div class="category">Article</div>
+            <div class="title">NASA's SPHEREx Takes First Images</div>
+        </div>
+    </div>
+    <div class="grid-item noticia5">
+        <img src="Dazai PORTADA.png" alt="Noticia 5">
+        <div class="overlay">
+            <div class="category">Article</div>
+            <div class="title">NASA's Next Missions to Study Space</div>
         </div>
     </div>
 </div>
