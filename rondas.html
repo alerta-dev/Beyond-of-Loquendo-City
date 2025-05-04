@@ -12,10 +12,11 @@
       background: url('background.gif') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-    }
-    .navbar {
+      
+     .navbar {
       background: rgba(0, 0, 0, 0.9);
       display: flex;
+      align-items: center;
       justify-content: space-around;
       padding: 1rem 2rem;
     }
@@ -23,6 +24,8 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+    }
+      
     }
     .container {
       margin: 2rem;
@@ -35,10 +38,13 @@
   </style>
 </head>
 <body>
-  <nav class="navbar">
+    <nav class="navbar">
+    <a href="index.html">
+    <img src="logo.png" alt="Logo" class="logo">
+    </a>
     <a href="index.html">Inicio</a>
-    <a href="registro.html">Registro</a>
     <a href="ranking.html">Ranking</a>
+    <a href="registro.html">Registro</a>
     <a href="rondas.html">Rondas</a>
   </nav>
 
