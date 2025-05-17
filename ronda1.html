@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond Of Loquendo City</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond Rebuild</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilos generales */
+    /* Estilos generales compartidos */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -14,45 +15,70 @@
       background-size: cover;
       color: #fff;
     }
-    /* Navbar con dropdown para Rondas */
-    .navbar {
-      background: rgba(0,0,0,0.9);
+ /*----------------------------------------------------------------------------------------------------*/
+   
+.navbar {
+      background: black;
       display: flex;
+      align-items: center;
       justify-content: space-around;
       padding: 1rem 2rem;
+      position: relative;
     }
+
     .navbar a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
+      position: relative;
     }
+
+    .logo {
+      width: 130px;
+      height: auto;
+    }
+
+    /* Contenedor del submenú */
     .dropdown {
       position: relative;
-      display: inline-block;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
-      background: rgba(0,0,0,0.9);
+      top: 100%;
+      left: 0;
+      background-color: black;
       min-width: 160px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      border-radius: 5px;
       z-index: 1;
     }
+
     .dropdown-content a {
-      color: #fff;
-      padding: 12px 16px;
+      color: white;
+      padding: 10px 15px;
       text-decoration: none;
       display: block;
     }
+
     .dropdown-content a:hover {
-      background: #555;
+      background-color: #222;
     }
+
+    /* Mostrar submenú al pasar el cursor */
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    /* Contenedor principal */
-    .container {
+/*----------------------------------------------------------------------------------------------------*/
+
+.logo {
+  width: 130px;
+  height: auto; 
+}
+
+.container {
       margin: 2rem;
       backdrop-filter: blur(10px);
       background: rgba(0,0,0,0.5);
@@ -60,7 +86,18 @@
       padding: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.7);
     }
-    /* Estilos para la lista de participantes */
+    .filter {
+      margin-bottom: 1rem;
+    }
+    .filter label {
+      margin-right: 0.5rem;
+    }
+    .filter select {
+      padding: 0.3rem 0.5rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
     .participants {
       display: flex;
       flex-direction: column;
@@ -69,7 +106,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.8);
       border-radius: 10px;
       padding: 1rem;
       transition: transform 0.2s;
@@ -78,8 +115,8 @@
       transform: scale(1.02);
     }
     .participant img {
-      width: 60px;
-      height: 60px;
+      width: 200px;
+      height: 200px;
       border-radius: 10px;
       object-fit: cover;
       margin-right: 1rem;
@@ -88,52 +125,108 @@
       margin-left: auto;
       font-size: 1.5rem;
       font-weight: bold;
-      color: #6eff3e;
     }
+    /* Etiquetas de categoría */
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      margin-left: 1rem;
+      font-weight: bold;
+    }
+    .rojo { background-color: #ff4d4d; }
+    .verde { background-color: #3ae374; }
+    .azul { background-color: #1e90ff; }
   </style>
 </head>
 <body>
-  <!-- Navbar con enlaces a las secciones principales y dropdown para rondas -->
-  <nav class="navbar">
-    <a href="index.html">Inicio</a>
-    <a href="registro.html">Registro</a>
-    <a href="ranking.html">Ranking</a>
-    <div class="dropdown">
-      <a href="rondas.html" class="dropbtn">Rondas</a>
-      <div class="dropdown-content">
-        <a href="ronda1.html">Ronda 1</a>
-        <a href="ronda2.html">Ronda 2</a>
-        <a href="ronda3.html">Ronda 3</a>
-        <a href="ronda4.html">Ronda 4</a>
-        <a href="ronda5.html">Ronda 5</a>
-      </div>
-    </div>
-  </nav>
+  
+    <!-- NAVBAR -->
+    <nav class="navbar">
+    <a href="index.html">
+      <img src="logo.png" alt="Logo" class="logo">
+    </a>
 
-  <!-- Contenido principal para Ronda 1 -->
-  <section class="container">
-    <h2>Ronda 1</h2>
-    <p>Participantes y sus puntuaciones en la Ronda 1.</p>
-    <div class="participants">
-      <!-- Ejemplo de participante en Ronda 1 -->
-      <div class="participant">
-        <img src="profile1.jpg" alt="Participante 1">
+      <a href="index.html">Inicio</a>
+    
+    <div class="dropdown">
+    <a href="ranking.html">Ranking</a>
+      <div class="dropdown-content">
+       <a href="#categoria1">Ronda 1</a>
+       <a href="#categoria2">Ronda 2</a>
+       <a href="#categoria3">Ronda 3</a>
+         </div>
+    </div>
+    
+    <a href="registro.html">Registro</a>
+    <a href="rondas.html">Rondas</a>
+  </nav>
+<!-------------------------------------------------------------------------------------- >
+  <!-- REGISTRO: Lista de participantes -->
+  <section id="registro" class="container">
+    <h2>Registro de Participantes</h2>
+    <div class="filter">
+      <label for="category-filter">Filtrar por categoría:</label>
+      <select id="category-filter">
+        <option value="all">Todos</option>
+        <option value="rojo">Rojo</option>
+        <option value="verde">Verde</option>
+        <option value="azul">Azul</option>
+      </select>
+    </div>
+    <div id="participants" class="participants">
+      <!-- Participante Ejemplo - Rojo -->
+      <div class="participant" data-category="rojo">
+        <img src="https://64.media.tumblr.com/c7e8f8b56691c7188090aa9ef31b4055/2ebcc839069e6188-16/s540x810/07b5b2b3c26b945edec61508a821608789183674.pnj" alt="Participante 1">
         <div>
-          <h3>Jimmy Mclovin</h3>
-          <p>Nota Ronda 1: 09.50</p>
+          <h3>Jimmy Mclovin <span class="tag rojo">Rojo</span></h3>
+          <b><u><p>Ronda 1: 02.50</p></u></b>
+          <b><u><p>Ronda 2: 02.50</p></u></b>
+          <b><u><p>Ronda 3: 02.50</p></u></b>
         </div>
-        <div class="score">09.50</div>
+        <div class="score" style="color: #6eff3e;">07.50</div>
+       
       </div>
-      <div class="participant">
-        <img src="profile2.jpg" alt="Participante 2">
+      <!-- Participante Ejemplo - Verde -->
+      <div class="participant" data-category="verde">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
+        <img src="https://64.media.tumblr.com/c7e8f8b56691c7188090aa9ef31b4055/2ebcc839069e6188-16/s540x810/07b5b2b3c26b945edec61508a821608789183674.pnj" alt="Participante 2">
+        </a>  
         <div>
-          <h3>Laura Johnson</h3>
-          <p>Nota Ronda 1: 08.80</p>
+          <h3>Laura Johnson <span class="tag verde">Verde</span></h3>
+          <b><u><p>Ronda 1: 02.50</p></u></b>
+          <b><u><p>Ronda 2: 02.50</p></u></b>
+          <b><u><p>Ronda 3: 02.50</p></u></b>
+          <p>Esta organización te ayudará a mantener tu proyecto ordenado y a navegar entre secciones (Inicio, Registro, Ranking y las distintas Rondas) de forma clara y separada. Si tienes más dudas o necesitas más detalles, ¡aquí estoy para ayudarte!</p>          
         </div>
-        <div class="score">08.80</div>
+        <div class="score" style="color: #6eff3e;">07.50</div>
       </div>
-      <!-- Agrega más participantes según necesites -->
+      <!-- Participante Ejemplo - Azul -->
+      <div class="participant" data-category="azul">
+        <img src="profile3.jpg" alt="Participante 3">
+        <div>
+          <h3>Marcos Pérez <span class="tag azul">Azul</span></h3>
+          <b><u><p>Ronda 1: 02.50</p></u></b>
+          <b><u><p>Ronda 2: 02.50</p></u></b>
+          <b><u><p>Ronda 3: 02.50</p></u></b>
+        </div>
+        <div class="score" style="color: #6eff3e;">07.50</div>
+      </div>
     </div>
   </section>
+
+  <script>
+    // Filtro de categorías
+    const categorySelect = document.getElementById('category-filter');
+    const participantItems = document.querySelectorAll('.participant');
+
+    categorySelect.addEventListener('change', function() {
+      const selectedCategory = this.value;
+      participantItems.forEach(participant => {
+        const participantCategory = participant.getAttribute('data-category');
+        participant.style.display = (selectedCategory === 'all' || participantCategory === selectedCategory) ? 'flex' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
