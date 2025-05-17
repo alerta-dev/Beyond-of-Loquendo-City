@@ -15,20 +15,63 @@
       background-size: cover;
       color: #fff;
     }
-    
+ /*----------------------------------------------------------------------------------------------------*/
+   
 .navbar {
-      background: rgba(21, 21, 21, 1);
+      background: rgba(0, 0, 0, 0.9);
       display: flex;
       align-items: center;
       justify-content: space-around;
       padding: 1rem 2rem;
+      position: relative;
     }
 
-.navbar a {
+    .navbar a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5rem 1rem;
+      position: relative;
     }
+
+    .logo {
+      width: 130px;
+      height: auto;
+    }
+
+    /* Contenedor del submenú */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #222;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #333;
+    }
+
+    /* Mostrar submenú al pasar el cursor */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+/*----------------------------------------------------------------------------------------------------*/
 
 .logo {
   width: 130px;
